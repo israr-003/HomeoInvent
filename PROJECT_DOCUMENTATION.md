@@ -18,7 +18,14 @@
 
 ## Introduction
 
-HomeoInvent is a comprehensive web application designed to help people manage their homeopathic medicine collection and learn about natural remedies. The project was built using modern web technologies with a focus on database design and management for organizing medicine inventory, tracking learning progress, and providing intelligent health guidance.
+HomeoInvent is a comprehensive full-stack web application designed to help people manage their homeopathic medicine collection and learn about natural remedies. The project was built using modern web technologies with a strong focus on database design and management for organizing medicine inventory, tracking learning progress, and providing AI-powered intelligent health guidance through DeepSeek R1 via OpenRouter API.
+
+### Technology Stack
+- **Frontend**: React with TypeScript, Vite, TailwindCSS, Shadcn/UI
+- **Backend**: Express.js with TypeScript, RESTful API design
+- **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
+- **AI Integration**: DeepSeek R1 model via OpenRouter API for all intelligent features
+- **Deployment**: Replit cloud platform with automatic scaling
 
 ### Project Overview
 - **Name**: HomeoInvent
@@ -41,11 +48,13 @@ HomeoInvent is a comprehensive web application designed to help people manage th
 
 ### What the System Does
 1. **Inventory Management**: Store and organize homeopathic medicines with details like name, potency, company, location, and quantity
-2. **Learning Assistant**: Provide interactive quizzes and educational content about homeopathic remedies
-3. **Health Guidance**: Offer remedy suggestions based on symptoms using a knowledge database
-4. **Data Sharing**: Allow families to share medicine inventories through secure codes
-5. **Progress Tracking**: Monitor learning progress and quiz performance
-6. **Report Generation**: Create PDF and Excel reports of medicine collections
+2. **AI-Powered Learning Assistant**: Provide dynamic quizzes and educational content using DeepSeek R1 AI
+3. **AI Health Guidance (Dr. Harmony)**: Offer intelligent remedy suggestions based on symptoms using advanced AI analysis
+4. **AI Helper**: Smart inventory management with trend analysis and optimization recommendations
+5. **Smart Chatbot**: Natural language conversations about homeopathy powered by DeepSeek R1
+6. **Data Sharing**: Allow families to share medicine inventories through secure codes
+7. **Progress Tracking**: Monitor learning progress and AI-generated quiz performance
+8. **Report Generation**: Create PDF and Excel reports of medicine collections
 
 ### What Makes It Special
 - **Offline-First Design**: Works without internet connection using local browser storage

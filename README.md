@@ -1,10 +1,10 @@
 # HomeoInvent - Homeopathic Medicine Inventory Manager
 
-HomeoInvent is an advanced offline-first homeopathic medicine learning and inventory management application that provides comprehensive health insights through intelligent medication tracking and user-centric wellness tools, powered by **DeepSeek R1 AI** for all intelligent features.
+HomeoInvent is an advanced offline-first homeopathic medicine learning and inventory management application that provides comprehensive health insights through intelligent medication tracking and user-centric wellness tools, powered by **DeepSeek R1 AI via OpenRouter** for all intelligent features.
 
-## 🚀 AI Features Powered by DeepSeek R1
+## 🚀 AI Features Powered by DeepSeek R1 via OpenRouter
 
-HomeoInvent now uses **DeepSeek R1 API** for ALL AI functionality, providing:
+HomeoInvent uses **DeepSeek R1 through OpenRouter API** for ALL AI functionality, providing:
 
 - **🩺 AI Doctor (Dr. Harmony)**: Advanced symptom analysis and remedy suggestions
 - **🤖 AI Helper**: Intelligent inventory management and trend analysis  
@@ -22,13 +22,13 @@ HomeoInvent now uses **DeepSeek R1 API** for ALL AI functionality, providing:
 - **Export Options**: Generate PDF and Excel reports of your inventory
 - **Responsive UI**: Beautiful interface optimized for all devices
 
-## 🔧 DeepSeek R1 API Setup Instructions
+## 🔧 OpenRouter API Setup for DeepSeek R1
 
-### Step 1: Get Your DeepSeek API Key
+### Step 1: Get Your OpenRouter API Key
 
-1. **Visit DeepSeek**: Go to [https://platform.deepseek.com](https://platform.deepseek.com)
-2. **Create Account**: Sign up for a DeepSeek account if you don't have one
-3. **Generate API Key**: Navigate to API Keys section and create a new API key
+1. **Visit OpenRouter**: Go to [https://openrouter.ai/](https://openrouter.ai/)
+2. **Create Account**: Sign up for an OpenRouter account if you don't have one
+3. **Generate API Key**: Navigate to Keys section and create a new API key
 4. **Copy Key**: Save your API key securely (it starts with `sk-`)
 
 ### Step 2: Configure Environment Variables
@@ -38,30 +38,30 @@ HomeoInvent now uses **DeepSeek R1 API** for ALL AI functionality, providing:
 1. **Create .env file**: In your project root directory, create a file named `.env`
 2. **Add API Key**: Add the following line to your `.env` file:
    ```
-   DEEPSEEK_API_KEY=your_actual_api_key_here
+   OPENROUTER_API_KEY=your_actual_openrouter_api_key_here
    ```
-3. **Replace placeholder**: Replace `your_actual_api_key_here` with your actual DeepSeek API key
+3. **Replace placeholder**: Replace `your_actual_openrouter_api_key_here` with your actual OpenRouter API key
 
 #### Option B: Using Replit Secrets (For Replit Users)
 
 1. **Open Secrets**: In Replit, click on the "Secrets" tab (lock icon) in the left sidebar
 2. **Add Secret**: Click "New Secret"
-3. **Set Key**: Enter `DEEPSEEK_API_KEY` as the key
-4. **Set Value**: Paste your DeepSeek API key as the value
+3. **Set Key**: Enter `OPENROUTER_API_KEY` as the key
+4. **Set Value**: Paste your OpenRouter API key as the value
 5. **Save**: Click "Add Secret"
 
 ### Step 3: Verify Setup
 
 1. **Restart Application**: Restart your development server
-2. **Check Console**: Look for the startup message - you should NOT see the warning about missing API key
+2. **Check Console**: Look for the startup message - you should NOT see the warning about missing OPENROUTER_API_KEY
 3. **Test AI Features**: Try using any AI feature (AI Doctor, AI Helper, Learning Assistant)
 
-### Step 4: Testing Your DeepSeek Integration
+### Step 4: Testing Your OpenRouter DeepSeek Integration
 
 #### Test AI Doctor (Dr. Harmony):
 1. Click the "AI Doctor" button in the app
 2. Enter symptoms like "headache and fever"
-3. You should receive detailed remedy suggestions powered by DeepSeek R1
+3. You should receive detailed remedy suggestions powered by DeepSeek R1 via OpenRouter
 
 #### Test AI Helper:
 1. Click the "AI Helper" button
@@ -75,9 +75,10 @@ HomeoInvent now uses **DeepSeek R1 API** for ALL AI functionality, providing:
 
 ### 🔍 Troubleshooting
 
-**If you see "API key not configured" warnings:**
+**If you see "OPENROUTER_API_KEY not found" warnings:**
 - Double-check your `.env` file exists in the root directory
 - Verify the API key is correctly formatted (starts with `sk-`)
+- Ensure you're using OPENROUTER_API_KEY (not DEEPSEEK_API_KEY)
 - Restart the application after adding the key
 - Check for any extra spaces or quotes around the key
 
