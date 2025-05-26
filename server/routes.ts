@@ -35,7 +35,7 @@ async function analyzeSymptoms(symptoms: string, userInventory: string[]) {
       disclaimer: result.disclaimer
     };
   } catch (error) {
-    console.error('DeepSeek AI analysis failed:', error);
+    console.error('OpenRouter DeepSeek AI analysis failed:', error);
     
     // Fallback to authentic Boericke's Materia Medica when DeepSeek API is unavailable
     if (isGreeting(symptoms)) {
