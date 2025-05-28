@@ -98,7 +98,7 @@ class DeepSeekAIService {
           'X-Title': 'HomeoInvent - Homeopathic Medicine Manager' // App identification
         },
         body: JSON.stringify({
-          model: 'deepseek-chat', // Updated to use deepseek-chat model via OpenRouter
+          model: 'deepseek/deepseek-r1', // Updated to use deepseek-chat model via OpenRouter
           messages: messages,
           temperature: temperature,
           max_tokens: 2000,
@@ -167,7 +167,7 @@ Provide:
 
 Format as clear, practical advice for educational purposes.`;
 
-      const messages = [
+    /*  const messages = [
         {
           role: 'system',
           content: 'You are Dr. Harmony, an expert homeopathic AI assistant. Provide evidence-based remedy suggestions using classical homeopathy principles. Always emphasize educational purpose and recommend professional consultation for serious conditions.'
@@ -176,7 +176,23 @@ Format as clear, practical advice for educational purposes.`;
           role: 'user',
           content: prompt
         }
-      ];
+      ];*/
+
+      const messages = [
+  {
+    role: 'system',
+    content: `You are an expert Homeopathic AI Doctor. Your job is to analyze symptoms provided by the user and suggest 2-3 best homeopathic remedies.
+Each remedy should include:
+1. Name
+2. Potency (e.g., 30C or 200C)
+3. Key reason for choosing it
+4. Short advice or note
+
+Only answer in this format. Don’t add extra text. Always be clear and structured.`
+  },
+  { role: 'user', content: prompt }
+];
+
 
       const aiResponse = await this.callDeepSeekAPI(messages, 0.7);
       
@@ -248,7 +264,13 @@ Be practical and actionable in your response.`;
       const messages = [
         {
           role: 'system',
-          content: 'You are an AI Helper for homeopathic inventory management. Provide practical, actionable advice for organizing and optimizing medicine collections. Focus on inventory management, not medical advice.'
+          content: `You are a helpful AI assistant specializing in homeopathy.
+Your responsibilities include:
+1. Suggesting alternative homeopathic remedies when asked.
+2. Providing general dosage guidance for common homeopathic medicines (while clearly stating that users should consult a certified practitioner for personalized doses).
+3. Offering general support and answering user questions about homeopathic use, remedy types, storage, and inventory — but never diagnosing or prescribing.
+
+Be clear, professional, and informative. If the question is outside your scope, gently redirect the user to consult a qualified homeopathic doctor. `
         },
         {
           role: 'user',
@@ -323,7 +345,11 @@ Include related topics for further learning.`;
       const messages = [
         {
           role: 'system',
-          content: 'You are an expert homeopathy educator creating engaging learning content. Use classical homeopathy principles and authentic sources. Make content educational and clinically relevant.'
+          content: `You are an expert homeopathy educator and content creator. Your goal is to produce accurate, engaging, and clinically relevant learning materials based on the principles of classical homeopathy.
+
+Use authentic sources and standard references such as the Organon of Medicine, Materia Medica, and Repertory. Your content should be clear, educational, and practical for students, practitioners, or those interested in homeopathy.
+
+Avoid giving direct medical advice or personalized prescriptions. Focus on knowledge-building, remedy understanding, case analysis, and foundational theory rooted in classical homeopathy.`
         },
         {
           role: 'user',
@@ -431,7 +457,7 @@ Include related topics for further learning.`;
           name: remedy,
           potency: '30C',
           indication: 'As mentioned in AI analysis',
-          source: 'DeepSeek R1 Analysis',
+          source: 'AI Analysis',
           reasoning: 'Identified in comprehensive symptom analysis',
           confidence: 0.8,
           inInventory: userInventory.some(inv => inv.toLowerCase().includes(remedy.toLowerCase()))
