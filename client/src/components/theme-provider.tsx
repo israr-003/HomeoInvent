@@ -40,12 +40,12 @@ export function ThemeProvider({
         : theme;
     
     // Add transition class first
-    root.classList.add('theme-transition');
+    root.classList.toggle('theme-transition');
     
     // Set a timeout to allow transition to take effect
     setTimeout(() => {
       root.classList.remove("light", "dark");
-      root.classList.add(resolvedTheme);
+      root.classList.toggle(resolvedTheme);
       
       // Remove transition class after the transition completes
       setTimeout(() => {
