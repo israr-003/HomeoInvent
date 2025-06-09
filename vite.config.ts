@@ -11,7 +11,7 @@ export default defineConfig({
     process.env.REPL_ID !== undefined
       ? [
           await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
+            m.cartographer()
           ),
         ]
       : []),
@@ -28,5 +28,19 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split react & react-dom into one chunk
+          react: ["react", "react-dom"],
+
+          // Split html2canvas if you're using it
+          html2canvas: ["html2canvas"],
+
+          // PurifyJS or other heavy libs (adjust the key if import is different)
+          purify: ["purify-css"],
+        },
+      },
+    },
   },
 });
